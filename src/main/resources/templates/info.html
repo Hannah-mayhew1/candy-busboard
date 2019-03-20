@@ -11,16 +11,29 @@
     </head>
     <body>
         <div layout:fragment="content" class="container body-content">
-            <h1 style="background-color:PaleVioletRed;">Bus Information</h1>
+            <img src="https://www.servcorp.co.uk/media/16164/london_banner.jpg" alt="London Skyline">
+            <br>
+            <br>
+            <h1 id="title">Bus Information</h1>
             <div>
-                <p>You entered postcode <span th:text="${busInfo.postcode}"></span></p>
+                <h5 style="text-align: center">Showing the two closest bus stops to  <span th:text="${busInfo.postcode}"></span>:</h5>
+                <br>
                 <div th:each="stopAndArrivals : ${busInfo.stopsAndArrivals}">
                     <h3><b>Departure Board for
-                        <span style="background-color:rgba(219,112,147,0.5);" th:text="${stopAndArrivals.stop.commonName}"></span>
+                        <span th:text="${stopAndArrivals.stop.commonName}"></span>
                     </b></h3>
-                    <div style="background-color:rgba(219,122,147,0.25);" th:each="arrival : ${stopAndArrivals.arrivals}">
-                        <p>The <b><span th:text="${arrival.lineName}"></span></b> service to <b><span th:text="${arrival.destinationName}"></span></b> is arriving in <b><span th:text="${arrival.timeToStation}"></span></b> mins</p>
-                    </div>
+                    <table>
+                        <tr>
+                            <th scope="col">Route Number</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Arriving in:</th>
+                        </tr>
+                        <tr th:each="arrival : ${stopAndArrivals.arrivals}">
+                            <td><span th:text="${arrival.lineName}"></span></td>
+                            <td><span th:text="${arrival.destinationName}"></span></td>
+                            <td><b><span th:text="${arrival.nicelyFormattedTimeToStation}"></span></b></td>
+                        </tr>
+                    </table>
                     <br>
                 </div>
             </div>

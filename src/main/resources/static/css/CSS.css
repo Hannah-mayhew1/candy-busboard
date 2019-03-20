@@ -1,0 +1,49 @@
+body {
+    background-color: lavender;
+}
+
+#title {
+    background-color: rgb(52, 58, 64);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    text-align: center;
+}
+
+h3 {
+    background-color: rgb(52, 58, 64);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#displayBusInfo {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+    width: 33%;
+    height: 20px;
+    text-align: center;
+    vertical-align: center;
+    padding: 15px;
+}
+
+
+
+tr:nth-child(odd) {
+    background-color: #f5d1e8;
+}
+
+tr:nth-child(even) {
+    background-color: #f7e9f2;
+}
+
+img {
+    width: 100%;
+}
+

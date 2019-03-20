@@ -22,7 +22,18 @@ public class ArrivalPrediction {
     }
 
     public int getTimeToStation() {
-        return timeToStation/60;
+        return timeToStation;
+    }
+
+    public String getNicelyFormattedTimeToStation() {
+        int minutesToStation = (timeToStation + 30) / 60;
+        if (minutesToStation == 0) {
+            return "Due";
+        } else if (minutesToStation == 1) {
+            return "1 minute";
+        } else {
+            return minutesToStation + " minutes";
+        }
     }
 }
 
