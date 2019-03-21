@@ -19,9 +19,9 @@
                 <h5 style="text-align: center">Showing the two closest bus stops to  <span th:text="${busInfo.postcode}"></span>:</h5>
                 <br>
                 <div th:each="stopAndArrivals : ${busInfo.stopsAndArrivals}">
-                    <h3><b>Departure Board for
+                    <h3><a th:href="${stopAndArrivals.stop.googleMapsLink}" target="_blank"><b>Departure Board for
                         <span th:text="${stopAndArrivals.stop.commonName}"></span>
-                    </b></h3>
+                    </b></a></h3>
                     <table>
                         <tr>
                             <th scope="col">Route Number</th>

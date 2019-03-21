@@ -14,6 +14,8 @@ public class BusStop {
     private String naptanId;
     private String commonName;
     private double distance;
+    private double lat;
+    private double lon;
 
     private BusStop(){}
 
@@ -29,5 +31,15 @@ public class BusStop {
         return distance;
     }
 
+    public double getLat() {
+        return lat;
+    }
 
+    public double getLon() {
+        return lon;
+    }
+
+    public String getGoogleMapsLink() {
+        return "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lon;
+    }
 }
